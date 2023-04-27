@@ -51,6 +51,10 @@ app.use(
 
 app.use('/api/admin', adminRouter);
 
+app.get('/', () => {
+  res.send('Hello There');
+});
+
 var PORT = process.env.PORT || 5000;
 
 // const server = app.listen(PORT, () =>
