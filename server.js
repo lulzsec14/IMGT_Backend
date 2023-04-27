@@ -61,7 +61,7 @@ var PORT = process.env.PORT || 5000;
 //   log.info(`Server running on ${PORT}`.bold)
 // );
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
   console.log(`Server running on ${PORT}`);
 });
 
