@@ -77,7 +77,7 @@ app.listen(5000, () => {
 //   });
 // }
 
-// module.exports = app;
+module.exports = app;
 // process.on('unhandledRejection', (err, promise) => {
 //   log.info(`Error occured!: ${err}`.red.bold);
 //   server.close(() => process.exit());
