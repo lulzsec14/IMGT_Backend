@@ -1,4 +1,4 @@
-const whitelist = ["http://localhost:3000"];
+const whitelist = ["https://imgt-client.vercel.app"];
 
 export const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
