@@ -15,7 +15,7 @@ const path = require('path');
 
 const corsOptionsDelegate = require('./Utils/cors');
 
-connectDB();
+// connectDB();
 
 const app = express();
 
