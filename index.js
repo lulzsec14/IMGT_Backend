@@ -1,5 +1,4 @@
-// const path = require('path')
-// require('dotenv').config({ path: './config.env' });
+require('dotenv').config({ path: './config.env' });
 const express = require('express');
 const config = require('config');
 const colors = require('colors');
@@ -23,7 +22,7 @@ const store = mongoStore.create({
   mongoUrl: process.env.MONGO_URI,
   autoRemove: 'native',
   mongoOptions: {
-    useNewUrlParser: true,
+    // useNewUrlParser: true,
     useUnifiedTopology: true,
   },
 });
@@ -78,7 +77,7 @@ app.listen(5000, () => {
 //   });
 // }
 
-module.exports = app;
+// module.exports = app;
 // process.on('unhandledRejection', (err, promise) => {
 //   log.info(`Error occured!: ${err}`.red.bold);
 //   server.close(() => process.exit());
