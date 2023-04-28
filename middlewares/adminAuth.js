@@ -1,5 +1,5 @@
-const log = require('../Utils/Logger');
-const jwt = require('jsonwebtoken');
+import log from "../Utils/Logger.js";
+import jwt from "jsonwebtoken";
 
 const checkAdmin = async (req, res, next) => {
   try {
@@ -7,10 +7,10 @@ const checkAdmin = async (req, res, next) => {
     // matchToken = false;
 
     if (!token) {
-      console.log('Here');
+      console.log("Here");
       res.status(401).json({
         success: false,
-        error: 'Not authorized to perform this operation!',
+        error: "Not authorized to perform this operation!",
       });
       return;
     }
@@ -20,7 +20,7 @@ const checkAdmin = async (req, res, next) => {
     } catch (err) {
       res.status(401).json({
         success: false,
-        error: 'Not authorized to perform this operation!',
+        error: "Not authorized to perform this operation!",
       });
     }
   } catch (err) {
@@ -29,4 +29,4 @@ const checkAdmin = async (req, res, next) => {
   }
 };
 
-module.exports = { checkAdmin };
+export { checkAdmin };

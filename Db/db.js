@@ -1,10 +1,11 @@
-const mongoose = require('mongoose');
 const URI = process.env.MONGO_URI;
-const log = require('../Utils/Logger');
+
+import mongoose from "mongoose";
+import log from "../Utils/Logger.js";
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(URI, {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -15,4 +16,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export { connectDB };

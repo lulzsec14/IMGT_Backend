@@ -1,3 +1,3 @@
-const adminRouter = require('./admin.routes');
+import { adminRouter } from "./admin.routes.js";
 
-module.exports = { adminRouter };
+export { adminRouter };

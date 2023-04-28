@@ -1,5 +1,4 @@
-const nodemailer = require('nodemailer');
-const sgmail = require('@sendgrid/mail');
+import sgmail from "@sendgrid/mail";
 
 const sendEmail = (options) => {
   sgmail.setApiKey(process.env.EMAIL_PASSWORD);
@@ -23,4 +22,4 @@ const sendEmail = (options) => {
   })();
 };
 
-module.exports = sendEmail;
+export { sendEmail };

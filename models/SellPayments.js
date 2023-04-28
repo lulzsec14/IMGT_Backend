@@ -1,12 +1,11 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+import mongoose from "mongoose";
 
 const sellPayments = mongoose.Schema({
   name: {
     type: String,
     minLength: 3,
-    maxLength: [80, 'Name can not be longer than 80 characters!'],
-    required: [true, 'Please provide Full Name of the Stock!'],
+    maxLength: [80, "Name can not be longer than 80 characters!"],
+    required: [true, "Please provide Full Name of the Stock!"],
   },
   paymentMode: {
     type: String,
@@ -17,14 +16,14 @@ const sellPayments = mongoose.Schema({
     required: true,
   },
   category: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'Category',
+    ref: "Category",
   },
   stockReference: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'SoldStocks',
+    ref: "SoldStocks",
   },
   paymentDate: {
     type: Date,
@@ -40,5 +39,5 @@ const sellPayments = mongoose.Schema({
   },
 });
 
-const SellPayments = mongoose.model('SellPayments', sellPayments);
-module.exports = SellPayments;
+const SellPayments = mongoose.model("SellPayments", sellPayments);
+export { SellPayments };

@@ -1,22 +1,21 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+import mongoose from "mongoose";
 
 const stockSchema = mongoose.Schema({
   stockId: {
     type: String,
-    required: [true, 'No Stock Id assigned to stock!'],
+    required: [true, "No Stock Id assigned to stock!"],
     unique: true,
   },
   name: {
     type: String,
     minLength: 3,
-    maxLength: [20, 'Name can not be longer than 20 characters!'],
-    required: [true, 'Please provide Full Name of the Stock!'],
+    maxLength: [20, "Name can not be longer than 20 characters!"],
+    required: [true, "Please provide Full Name of the Stock!"],
   },
   category: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'Category',
+    ref: "Category",
   },
   seller: {
     name: {
@@ -25,7 +24,7 @@ const stockSchema = mongoose.Schema({
     },
     address: {
       type: String,
-      maxLength: [80, 'Address can not be longer than 80 characters'],
+      maxLength: [80, "Address can not be longer than 80 characters"],
       required: true,
     },
     phoneNo: {
@@ -49,5 +48,5 @@ const stockSchema = mongoose.Schema({
   },
 });
 
-const Stock = mongoose.model('Stock', stockSchema);
-module.exports = Stock;
+const Stock = mongoose.model("Stock", stockSchema);
+export { Stock };

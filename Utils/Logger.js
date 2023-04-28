@@ -1,16 +1,16 @@
-const logger = require('pino');
-const dayjs = require('dayjs');
-const config = require('config');
+import logger from "pino";
+import dayjs from "dayjs";
+// import config from "config";
 
-const level = config.get('logLevel');
+// const level = config.get("logLevel");
 
 const log = logger({
   transport: {
-    target: 'pino-pretty',
+    target: "pino-pretty",
   },
-  level,
+  level: "info",
   base: { pid: false },
   timestamp: () => `,"time":" ${dayjs().format()}"`,
 });
 
-module.exports = log;
+export default log;
