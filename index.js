@@ -1,4 +1,4 @@
-require('dotenv').config({ path: './config.env' });
+// require('dotenv').config({ path: './config.env' });
 const express = require('express');
 const config = require('config');
 const colors = require('colors');
@@ -50,7 +50,7 @@ app.use(
 
 app.use('/api/admin', adminRouter);
 
-app.get('/', () => {
+app.get('/', (req, res) => {
   res.send('Hello There');
 });
 
