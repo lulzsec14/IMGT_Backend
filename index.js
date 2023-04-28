@@ -14,41 +14,41 @@ const path = require('path');
 
 const corsOptionsDelegate = require('./Utils/cors');
 
-connectDB();
+// connectDB();
 
-const app = express();
+// const app = express();
 
-const store = mongoStore.create({
-  mongoUrl: process.env.MONGO_URI,
-  autoRemove: 'native',
-  mongoOptions: {
-    // useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-});
+// const store = mongoStore.create({
+//   mongoUrl: process.env.MONGO_URI,
+//   autoRemove: 'native',
+//   mongoOptions: {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   },
+// });
 
-app.use(compression());
-app.use(cors(corsOptionsDelegate));
-app.use(express.json());
-app.use(cookieParser());
+// app.use(compression());
+// app.use(cors(corsOptionsDelegate));
+// app.use(express.json());
+// app.use(cookieParser());
 
-// app.set('trust proxy', 1);
-app.use(
-  session({
-    secret: process.env.SECRET_KEY,
-    cookie: {
-      // httpOnly: true,
-      // secure: true,
-      maxAge: 86400000,
-      sameSite: 'none',
-    },
-    resave: false,
-    saveUninitialized: false,
-    store: store,
-  })
-);
+// // app.set('trust proxy', 1);
+// app.use(
+//   session({
+//     secret: process.env.SECRET_KEY,
+//     cookie: {
+//       // httpOnly: true,
+//       // secure: true,
+//       maxAge: 86400000,
+//       sameSite: 'none',
+//     },
+//     resave: false,
+//     saveUninitialized: false,
+//     store: store,
+//   })
+// );
 
-app.use('/api/admin', adminRouter);
+// app.use('/api/admin', adminRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello There');
