@@ -16,7 +16,7 @@ const corsOptionsDelegate = require('./Utils/cors');
 
 // connectDB();
 
-// const app = express();
+const app = express();
 
 // const store = mongoStore.create({
 //   mongoUrl: process.env.MONGO_URI,
