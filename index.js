@@ -1,18 +1,20 @@
 // require('dotenv').config({ path: './config.env' });
-const express = require('express');
-const config = require('config');
-const colors = require('colors');
-const cors = require('cors');
-const connectDB = require('./Db/db');
-const log = require('./Utils/Logger');
-const compression = require('compression');
-const { adminRouter, userRouter } = require('./routes');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const mongoStore = require('connect-mongo');
-const path = require('path');
+// const express = require('express');
+// const config = require('config');
+// const colors = require('colors');
+// const cors = require('cors');
+// const connectDB = require('./Db/db');
+// const log = require('./Utils/Logger');
+// const compression = require('compression');
+// const { adminRouter, userRouter } = require('./routes');
+// const cookieParser = require('cookie-parser');
+// const session = require('express-session');
+// const mongoStore = require('connect-mongo');
+// const path = require('path');
 
-const corsOptionsDelegate = require('./Utils/cors');
+import express from 'express';
+
+// const corsOptionsDelegate = require('./Utils/cors');
 
 // connectDB();
 
