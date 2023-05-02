@@ -45,8 +45,7 @@ const store = mongoStore.create({
 });
 
 app.use(compression());
-// app.use(cors(corsOptionsDelegate));
-app.use(cors());
+app.use(cors(corsOptionsDelegate));
 app.use(express.json());
 app.use(cookieParser());
 
